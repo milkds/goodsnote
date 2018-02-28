@@ -38,7 +38,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="annotatedClasses">
             <list>
-                <value></value>
+                <value>goodsnote.model.Item</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -47,6 +47,15 @@
                 <prop key="hibernate.show_sql">true</prop>
             </props>
         </property>
+    </bean>
+
+    <!--Dao and Service beans-->
+    <bean id="itemDao" class="goodsnote.dao.ItemDaoMockImpl">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </bean>
+
+    <bean id="itemService" class="goodsnote.service.ItemServiceImpl">
+        <property name="itemDao" ref="itemDao"/>
     </bean>
 
 

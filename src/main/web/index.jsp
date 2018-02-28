@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>Abracadabra</title>
   </head>
   <body>
-  $END$
+  <a href="../../showitem/5">Show me dat bitch</a>
   </body>
 </html>
