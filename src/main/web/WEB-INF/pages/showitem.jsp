@@ -7,13 +7,34 @@
 <html>
 <head>
     <title>Item</title>
-    <tr>
-        <td width="80">${Item.id}</td>
-    </tr>
+    <table class="tg">
+        <tr>
+            <td width="80">Article: </td>
+            <td width="180">${Item.article}</td>
+        </tr>
+        <tr>
+            <td width="80">Name: </td>
+            <td width="180">${Item.name}</td>
+        </tr>
+        <tr>
+            <td width="80">Created: </td>
+            <td width="280">${Item.creationDate}</td>
+        </tr>
+        <tr>
+            <td width="80">Price: </td>
+            <td width="180">${Item.price}</td>
+        </tr>
+        <tr>
+            <td width="80">Quantity: </td>
+            <td width="180">${Item.quantity}</td>
+            <td width="20">${Item.quantityMeasure}</td>
+        </tr>
+        <tr>
+            <td width="80">Description: </td>
+            <td width="280">${Item.description}</td>
+        </tr>
+    </table>
 
-    <tr>
-        <td width="80">500</td>
-    </tr>
 </head>
 <body>
 </body>

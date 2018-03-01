@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -39,6 +40,12 @@ public class ItemDaoMockImpl implements ItemDao{
         logger.info("getting item by id omg");
         Item item = new Item();
         item.setId(100);
+        item.setArticle("SKU1488");
+        item.setName("Mein Kampf");
+        item.setCreationDate(new Date(117,3,12));
+        item.setPrice(14.88);
+        item.setQuantityMeasure(1);
+        item.setDescription("Best book in the world");
         return item;
     }
 
