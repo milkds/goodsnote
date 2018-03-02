@@ -27,7 +27,7 @@
         <tr>
             <td width="80">Quantity: </td>
             <td width="180">${Item.quantity}</td>
-            <td width="20">${Item.quantityMeasure}</td>
+            <td width="100">${Item.measurementUnit}</td>
         </tr>
         <tr>
             <td width="80">Description: </td>

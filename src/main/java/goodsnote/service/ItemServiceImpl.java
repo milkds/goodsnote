@@ -3,6 +3,7 @@ package goodsnote.service;
 import goodsnote.dao.ItemDao;
 import goodsnote.model.GoodsTemplate;
 import goodsnote.model.Item;
+import goodsnote.model.util.MeasurementUnits;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -37,8 +38,17 @@ public class ItemServiceImpl implements ItemService {
 
     @Transactional
     public Item getItemById(int id) {
+        Item item = itemDao.getItemById(id);
+        int quantityMeasure = item.getQuantityMeasure();
+        switch (quantityMeasure){
+            case 0: item.setMeasurementUnit(MeasurementUnits.PCS); break;
+            case 1: item.setMeasurementUnit(MeasurementUnits.KGs); break;
+            case 2: item.setMeasurementUnit(MeasurementUnits.GR); break;
+            case 3: item.setMeasurementUnit(MeasurementUnits.Meters); break;
+            default: item.setMeasurementUnit(MeasurementUnits.PCS);
+        }
 
-        return itemDao.getItemById(id);
+        return item;
     }
 
     @Override

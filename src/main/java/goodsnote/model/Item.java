@@ -1,5 +1,7 @@
 package goodsnote.model;
 
+import goodsnote.model.util.MeasurementUnits;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -45,6 +47,10 @@ public class Item {
 
     @Column(name = "ITEM_TEMPLATE_ID")
     private int templateID;
+
+
+    @Transient
+    private MeasurementUnits measurementUnit;
 
     @Transient
     private ArrayList<UserSpecificEntry> entries;
@@ -135,5 +141,13 @@ public class Item {
 
     public void setEntries(ArrayList<UserSpecificEntry> entries) {
         this.entries = entries;
+    }
+
+    public void setMeasurementUnit(MeasurementUnits measurementUnit) {
+        this.measurementUnit = measurementUnit;
+    }
+
+    public MeasurementUnits getMeasurementUnit() {
+        return measurementUnit;
     }
 }
