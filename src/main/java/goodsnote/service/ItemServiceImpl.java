@@ -38,6 +38,9 @@ public class ItemServiceImpl implements ItemService {
 
     @Transactional
     public Item getItemById(int id) {
+        if (id==0){
+            return new Item();
+        }
         Item item = itemDao.getItemById(id);
         int quantityMeasure = item.getQuantityMeasure();
         switch (quantityMeasure){

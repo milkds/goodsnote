@@ -27,7 +27,7 @@
           destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url"
-                  value="jdbc:mysql://localhost:3306/testgoods"/>
+                  value="jdbc:mysql://localhost:3306/goods_note"/>
         <property name="username" value="root"/>
         <property name="password" value="root"/>
     </bean>
