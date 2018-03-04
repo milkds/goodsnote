@@ -1,13 +1,11 @@
 package goodsnote.controller;
 
+        import goodsnote.model.Item;
         import goodsnote.service.ItemService;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.beans.factory.annotation.Qualifier;
         import org.springframework.ui.Model;
-        import org.springframework.web.bind.annotation.PathVariable;
-        import org.springframework.web.bind.annotation.RequestMapping;
-        import org.springframework.web.bind.annotation.RequestMethod;
-        import org.springframework.web.bind.annotation.RequestParam;
+        import org.springframework.web.bind.annotation.*;
 
 /**
  * Controller class.
@@ -31,6 +29,19 @@ public class Controller {
         model.addAttribute("Item", itemService.getItemById(itemID));
 
         return "showitem";
+    }
+
+    @RequestMapping(value = "showitem/update", method = RequestMethod.POST)
+    public String addItem (@ModelAttribute("item") Item item){
+        System.out.println(item.getId());
+        if (item.getId()==0){
+            this.itemService.addItem(item);
+        }
+        else {
+            this.itemService.updateItem(item);
+        }
+
+        return "redirect:/showitem/"+item.getId();
     }
 
 }

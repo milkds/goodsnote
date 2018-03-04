@@ -22,12 +22,12 @@ public class ItemDaoMockImpl implements ItemDao{
 
     @Override
     public void addItem(Item item) {
-
+        logger.info(item.getName());
     }
 
     @Override
     public void updateItem(Item item) {
-
+        logger.info(item.getName());
     }
 
     @Override

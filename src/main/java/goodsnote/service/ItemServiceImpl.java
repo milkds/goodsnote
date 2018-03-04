@@ -23,12 +23,12 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public void addItem(Item item) {
-
+        itemDao.addItem(item);
     }
 
     @Override
     public void updateItem(Item item) {
-
+        itemDao.updateItem(item);
     }
 
     @Override
