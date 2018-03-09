@@ -20,7 +20,7 @@
                 </form:label>
             </td>
             <td>
-                <form:input path="id" readonly="true" disabled="true"/>
+                <form:input path="id" readonly="true"/>
             </td>
         </tr>
         <tr>
@@ -30,7 +30,7 @@
                 </form:label>
             </td>
             <td>
-                <form:input path="article" onchange = "submit()"/>
+                <form:input path="article" onchange="submit()"/>
             </td>
         </tr>
         <tr>
@@ -40,7 +40,7 @@
                 </form:label>
             </td>
             <td>
-                <form:input path="name" onchange = "submit()"/>
+                <form:input path="name" onchange="submit()"/>
             </td>
         </tr>
         <tr>
@@ -50,7 +50,12 @@
                 </form:label>
             </td>
             <td>
-                <form:input path="creationDate" readonly="true" disabled="true"/>
+                <form:input path="creationDate" readonly="true"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form:input type="hidden" path="updateDate"/>
             </td>
         </tr>
         <tr>
@@ -60,7 +65,7 @@
                 </form:label>
             </td>
             <td>
-                <form:input path="price" onchange = "submit()"/>
+                <form:input path="price" onchange="submit()"/>
             </td>
         </tr>
         <tr>
@@ -70,10 +75,10 @@
                 </form:label>
             </td>
             <td>
-                <form:input path="quantity" onchange = "submit()"/>
+                <form:input path="quantity" onchange="submit()"/>
             </td>
             <td>
-                <form:select path="measurementUnit" onchange = "submit()">
+                <form:select path="measurementUnit" onchange="submit()">
                     <form:option value="" label="${Item.measurementUnit}"/>
                     <form:options items="${MeasurementUnits.values()}" />
                 </form:select>
@@ -86,7 +91,7 @@
                 </form:label>
             </td>
             <td>
-                <form:input path="description" onchange = "submit()"/>
+                <form:input path="description" onchange="submit()"/>
             </td>
         </tr>
     </table>

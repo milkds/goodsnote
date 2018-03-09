@@ -33,7 +33,9 @@ public class Controller {
 
     @RequestMapping(value = "showitem/update", method = RequestMethod.POST)
     public String addItem (@ModelAttribute("item") Item item){
-        System.out.println(item.getId());
+        System.out.println("item id is " + item.getId());
+        System.out.println("created on " + item.getCreationDate());
+        System.out.println("updated on " + item.getUpdateDate());
         if (item.getId()==0){
             this.itemService.addItem(item);
         }

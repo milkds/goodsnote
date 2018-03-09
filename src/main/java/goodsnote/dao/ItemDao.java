@@ -6,7 +6,10 @@ import goodsnote.model.Item;
 import java.util.List;
 
 /**
- * Created by Milk on 27.02.2018.
+ * Item DAO Interface
+ *
+ * @author Eugene Prohorenko
+ * @version 1.0
  */
 public interface ItemDao {
 

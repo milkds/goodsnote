@@ -11,6 +11,7 @@
     <title>Abracadabra</title>
   </head>
   <body>
+  <a href="../../showitem/0">Show me new bitch</a>
   <a href="../../showitem/5">Show me dat bitch</a>
   </body>
 </html>

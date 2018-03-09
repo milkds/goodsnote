@@ -50,7 +50,7 @@
     </bean>
 
     <!--Dao and Service beans-->
-    <bean id="itemDao" class="goodsnote.dao.ItemDaoMockImpl">
+    <bean id="itemDao" class="goodsnote.dao.ItemDaoImpl">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 

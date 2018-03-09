@@ -1,6 +1,7 @@
 package goodsnote.model;
 
 import goodsnote.model.util.MeasurementUnits;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -28,9 +29,11 @@ public class Item {
     private String name;
 
     @Column(name = "ITEM_CREATE_DATE")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date creationDate;
 
     @Column(name = "ITEM_UPDATE_DATE")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updateDate;
 
     @Column(name = "ITEM_PRICE")
@@ -149,5 +152,23 @@ public class Item {
 
     public MeasurementUnits getMeasurementUnit() {
         return measurementUnit;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", article='" + article + '\'' +
+                ", name='" + name + '\'' +
+                ", creationDate=" + creationDate +
+                ", updateDate=" + updateDate +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                ", quantityMeasure=" + quantityMeasure +
+                ", description='" + description + '\'' +
+                ", templateID=" + templateID +
+                ", measurementUnit=" + measurementUnit +
+                ", entries=" + entries +
+                '}';
     }
 }
