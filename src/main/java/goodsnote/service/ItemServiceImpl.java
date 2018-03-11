@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * GoodsTemplateService interface implementation
+ * ItemService interface implementation.
  *
  * @author Eugene Prohorenko
  * @version 1.0
@@ -72,6 +72,9 @@ public class ItemServiceImpl implements ItemService {
     }
 
     private void  setMeasurementForDao(Item item){
+        if (item.getQuantityMeasure() == 0){
+            item.setMeasurementUnit(MeasurementUnits.PCS);
+        }
         MeasurementUnits unit = item.getMeasurementUnit();
         switch (unit){
             case PCS: item.setQuantityMeasure(0); break;

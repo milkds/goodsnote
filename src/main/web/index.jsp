@@ -13,5 +13,6 @@
   <body>
   <a href="../../showitem/0">Show me new bitch</a>
   <a href="../../showitem/5">Show me dat bitch</a>
+  <a href="../../createitem/1">This is the new shit</a>
   </body>
 </html>

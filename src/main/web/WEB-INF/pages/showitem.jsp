@@ -50,7 +50,7 @@
                 </form:label>
             </td>
             <td>
-                <form:input path="creationDate" readonly="true"/>
+                <form:input path="creationDate" readonly="false"/>
             </td>
         </tr>
         <tr>

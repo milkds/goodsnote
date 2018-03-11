@@ -33,17 +33,19 @@ public class Controller {
 
     @RequestMapping(value = "showitem/update", method = RequestMethod.POST)
     public String addItem (@ModelAttribute("item") Item item){
-        System.out.println("item id is " + item.getId());
-        System.out.println("created on " + item.getCreationDate());
-        System.out.println("updated on " + item.getUpdateDate());
-        if (item.getId()==0){
-            this.itemService.addItem(item);
-        }
-        else {
-            this.itemService.updateItem(item);
-        }
+        this.itemService.updateItem(item);
 
         return "redirect:/showitem/"+item.getId();
+    }
+
+    @RequestMapping(value = "createitem/{templateID}", method = RequestMethod.GET)
+    public String createItem (Model model, @PathVariable int templateID){
+        Item item = new Item();
+        item.setTemplateID(templateID);
+        itemService.addItem(item);
+        model.addAttribute("Item", item);
+
+        return "showitem";
     }
 
 }
