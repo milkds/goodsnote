@@ -39,6 +39,8 @@
         <property name="annotatedClasses">
             <list>
                 <value>goodsnote.model.Item</value>
+                <value>goodsnote.model.UserSpecificEntry</value>
+                <value>goodsnote.model.UserSpecificField</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -56,6 +58,21 @@
 
     <bean id="itemService" class="goodsnote.service.ItemServiceImpl">
         <property name="itemDao" ref="itemDao"/>
+    </bean>
+
+    <bean id="entryDao" class="goodsnote.dao.EntryDaoImpl">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </bean>
+
+    <bean id="entryService" class="goodsnote.service.EntryServiceImpl">
+        <property name="entryDao" ref="entryDao"/>
+    </bean>
+    <bean id="fieldDao" class="goodsnote.dao.FieldDaoImpl">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </bean>
+
+    <bean id="fieldService" class="goodsnote.service.FieldServiceImpl">
+        <property name="fieldDao" ref="fieldDao"/>
     </bean>
 
 

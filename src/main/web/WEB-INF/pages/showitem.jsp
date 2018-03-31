@@ -11,7 +11,7 @@
 </head>
 <body>
 <c:url var="updateAction" value="/showitem/update"/>
-<form:form action="${updateAction}" commandName="Item">
+<form:form action="${updateAction}" modelAttribute="Item">
     <table>
         <tr>
             <td>
@@ -50,7 +50,7 @@
                 </form:label>
             </td>
             <td>
-                <form:input path="creationDate" readonly="false"/>
+                <form:input path="creationDate" readonly="true"/>
             </td>
         </tr>
         <tr>
@@ -65,7 +65,7 @@
                 </form:label>
             </td>
             <td>
-                <form:input path="price" onchange="submit()"/>
+                <form:input path="price" type="number" step = "0.01" value = '${Item.price}' onchange="submit()"/>
             </td>
         </tr>
         <tr>
@@ -94,7 +94,10 @@
                 <form:input path="description" onchange="submit()"/>
             </td>
         </tr>
+
     </table>
 </form:form>
+
+<jsp:include page="/showentries/${Item.id}"/>
 </body>
 </html>

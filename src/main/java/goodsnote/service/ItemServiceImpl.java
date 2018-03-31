@@ -33,7 +33,7 @@ public class ItemServiceImpl implements ItemService {
     @Transactional
     public void updateItem(Item item) {
         setMeasurementForDao(item);
-        item.setUpdateDate(new Date());
+        //item.setUpdateDate(new Date());
         itemDao.updateItem(item);
     }
 

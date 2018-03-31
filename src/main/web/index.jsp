@@ -11,8 +11,9 @@
     <title>Abracadabra</title>
   </head>
   <body>
-  <a href="../../showitem/0">Show me new bitch</a>
   <a href="../../showitem/5">Show me dat bitch</a>
-  <a href="../../createitem/1">This is the new shit</a>
+  <a href="../../entry/1">Entry check</a>
+  <a href="../../showentries/5">check fields for item</a>
+  <a href="../../createitem/2">create something new</a>
   </body>
 </html>

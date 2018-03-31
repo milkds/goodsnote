@@ -2,10 +2,12 @@ package goodsnote.model;
 
 import goodsnote.model.util.MeasurementUnits;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  *This is a bean class representing item.
@@ -37,6 +39,7 @@ public class Item {
     private Date updateDate;
 
     @Column(name = "ITEM_PRICE")
+    @NumberFormat
     private double price;
 
     @Column(name = "ITEM_QUANTITY")
@@ -51,12 +54,11 @@ public class Item {
     @Column(name = "ITEM_TEMPLATE_ID")
     private int templateID;
 
-
     @Transient
     private MeasurementUnits measurementUnit;
 
     @Transient
-    private ArrayList<UserSpecificEntry> entries;
+    private List<UserSpecificField> fields;
 
     public int getId() {
         return id;
@@ -138,12 +140,12 @@ public class Item {
         this.templateID = templateID;
     }
 
-    public ArrayList<UserSpecificEntry> getEntries() {
-        return entries;
+    public List<UserSpecificField> getFields() {
+        return fields;
     }
 
-    public void setEntries(ArrayList<UserSpecificEntry> entries) {
-        this.entries = entries;
+    public void setFields(List<UserSpecificField> fields) {
+        this.fields = fields;
     }
 
     public void setMeasurementUnit(MeasurementUnits measurementUnit) {
@@ -168,7 +170,7 @@ public class Item {
                 ", description='" + description + '\'' +
                 ", templateID=" + templateID +
                 ", measurementUnit=" + measurementUnit +
-                ", entries=" + entries +
+                ", fields=" + fields +
                 '}';
     }
 }
