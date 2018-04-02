@@ -1,6 +1,8 @@
 package goodsnote.model;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  *This is a bean class representing entry.
@@ -21,17 +23,18 @@ public class UserSpecificEntry {
     private int id;
 
     //TODO: make this field insertable and updatable only in table entries
+
     @Column(name = "USER_FIELD_ID")
-    private int fieldID;
+    private Integer fieldID;
 
     @Column(name = "USER_FIELD_TYPE", table = "user_fields", insertable = false, updatable = false)
-    private int fieldType;
+    private Integer fieldType;
 
     @Column(name = "USER_FIELD_NAME", table = "user_fields", insertable = false, updatable = false )
     private String fieldName;
 
     @Column(name = "USER_FIELD_ORDER", table = "user_fields", insertable = false, updatable = false)
-    private int fieldOrder;
+    private Integer fieldOrder;
 
     @Column(name = "USER_ENTRY_VALUE")
     private String fieldValue;
@@ -47,11 +50,11 @@ public class UserSpecificEntry {
         this.id = id;
     }
 
-    public int getFieldType() {
+    public Integer getFieldType() {
         return fieldType;
     }
 
-    public void setFieldType(int fieldType) {
+    public void setFieldType(Integer fieldType) {
         this.fieldType = fieldType;
     }
 
@@ -63,11 +66,11 @@ public class UserSpecificEntry {
         this.fieldName = fieldName;
     }
 
-    public int getFieldOrder() {
+    public Integer getFieldOrder() {
         return fieldOrder;
     }
 
-    public void setFieldOrder(int fieldOrder) {
+    public void setFieldOrder(Integer fieldOrder) {
         this.fieldOrder = fieldOrder;
     }
 
@@ -87,11 +90,11 @@ public class UserSpecificEntry {
         this.itemID = itemID;
     }
 
-    public int getFieldID() {
+    public Integer getFieldID() {
         return fieldID;
     }
 
-    public void setFieldID(int fieldID) {
+    public void setFieldID(Integer fieldID) {
         this.fieldID = fieldID;
     }
 

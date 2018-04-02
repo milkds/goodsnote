@@ -39,11 +39,20 @@ INSERT INTO user_entries VALUES (1, 1, 5, 'Chase Lynn' );
 INSERT INTO user_entries VALUES (2, 2, 5, 'Explicit Lyrics' );
 INSERT INTO user_entries VALUES (3, 3, 5, 'Obscene English' );
 INSERT INTO user_entries VALUES (4, 4, 5, 'TRUE' );
+INSERT INTO user_entries VALUES (5, 5, 5, 'Oh shit - can you read this?' );
+INSERT INTO user_entries VALUES (6, 6, 3, 'Nosov' );
+INSERT INTO user_entries VALUES (7, 7, 3, 'Fiction' );
+INSERT INTO user_entries VALUES (8, 8, 3, 'russian' );
+INSERT INTO user_entries VALUES (9, 9, 3, 'definitely yes' );
+INSERT INTO user_entries VALUES (10, 1, 4, 'Nosov' );
+INSERT INTO user_entries VALUES (11, 2, 4, 'Fiction' );
+
+
 
 -- Table user_fields:
 DROP TABLE IF EXISTS user_fields;
 CREATE TABLE user_fields (
-  FIELD_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  FIELD_ID INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   TEMPLATE_ID INT,
   USER_FIELD_TYPE INT,
   USER_FIELD_NAME VARCHAR(255),
@@ -65,3 +74,8 @@ INSERT INTO user_fields VALUES (1, 2, 1, 'Author', 1);
 INSERT INTO user_fields VALUES (2, 2, 1, 'Genre', 2);
 INSERT INTO user_fields VALUES (3, 2, 1, 'Language', 3);
 INSERT INTO user_fields VALUES (4, 2, 2, 'is cool?', 4);
+INSERT INTO user_fields VALUES (5, 2, 2, 'another book attribute', 5);
+INSERT INTO user_fields VALUES (6, 2, 1, 'Author2', 1);
+INSERT INTO user_fields VALUES (7, 2, 1, 'Genre2', 2);
+INSERT INTO user_fields VALUES (8, 2, 1, 'Language2', 3);
+INSERT INTO user_fields VALUES (9, 2, 1, 'is cool? 2', 4);
