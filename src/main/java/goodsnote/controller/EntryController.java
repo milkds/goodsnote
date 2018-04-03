@@ -38,7 +38,6 @@ public class EntryController {
 
     @RequestMapping(value = "entry/update", method = RequestMethod.POST)
     public String updateEntry (@ModelAttribute("entry") UserSpecificEntry entry){
-        System.out.println("we have an entry and its details are  - "+entry);
         this.entryService.updateEntry(entry);
 
         return "redirect:/showentries/"+entry.getItemID();
@@ -46,8 +45,6 @@ public class EntryController {
 
     @RequestMapping(value = "showentries/{itemID}", method = RequestMethod.GET)
     public String showEntries (Model model, @PathVariable int itemID){
-        System.out.println("in showentry itemID is "+itemID);
-        System.out.println("fieldname for first field is "+entryService.listEntries(itemID).get(0).getFieldName());
         model.addAttribute("listEntries", entryService.listEntries(itemID));
         model.addAttribute("modelEntry", new UserSpecificEntry());
 

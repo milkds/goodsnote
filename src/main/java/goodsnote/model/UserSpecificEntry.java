@@ -13,8 +13,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "user_entries")
-@SecondaryTable(name = "user_fields", pkJoinColumns={
-        @PrimaryKeyJoinColumn(name="FIELD_ID") })
+/*@SecondaryTable(name = "user_fields", pkJoinColumns={
+        @PrimaryKeyJoinColumn(name="FIELD_ID") })*/
 public class UserSpecificEntry {
 
     @Id
@@ -24,17 +24,18 @@ public class UserSpecificEntry {
 
     //TODO: make this field insertable and updatable only in table entries
 
-    @Column(name = "USER_FIELD_ID")
-    private Integer fieldID;
+    @ManyToOne
+    @JoinColumn(name="USER_FIELD_ID",referencedColumnName="FIELD_ID", updatable = false, insertable = false)
+    private UserSpecificField field;
 
-    @Column(name = "USER_FIELD_TYPE", table = "user_fields", insertable = false, updatable = false)
+   /* @Column(name = "USER_FIELD_TYPE", table = "user_fields", insertable = false, updatable = false)
     private Integer fieldType;
 
     @Column(name = "USER_FIELD_NAME", table = "user_fields", insertable = false, updatable = false )
     private String fieldName;
 
     @Column(name = "USER_FIELD_ORDER", table = "user_fields", insertable = false, updatable = false)
-    private Integer fieldOrder;
+    private Integer fieldOrder;*/
 
     @Column(name = "USER_ENTRY_VALUE")
     private String fieldValue;
@@ -50,7 +51,7 @@ public class UserSpecificEntry {
         this.id = id;
     }
 
-    public Integer getFieldType() {
+ /*   public Integer getFieldType() {
         return fieldType;
     }
 
@@ -72,7 +73,7 @@ public class UserSpecificEntry {
 
     public void setFieldOrder(Integer fieldOrder) {
         this.fieldOrder = fieldOrder;
-    }
+    }*/
 
     public String getFieldValue() {
         return fieldValue;
@@ -90,22 +91,19 @@ public class UserSpecificEntry {
         this.itemID = itemID;
     }
 
-    public Integer getFieldID() {
-        return fieldID;
+    public UserSpecificField getField() {
+        return field;
     }
 
-    public void setFieldID(Integer fieldID) {
-        this.fieldID = fieldID;
+    public void setField(UserSpecificField field) {
+        this.field = field;
     }
 
     @Override
     public String toString() {
         return "UserSpecificEntry{" +
                 "id=" + id +
-                ", fieldID=" + fieldID +
-                ", fieldType=" + fieldType +
-                ", fieldName='" + fieldName + '\'' +
-                ", fieldOrder=" + fieldOrder +
+                ", field=" + field +
                 ", fieldValue='" + fieldValue + '\'' +
                 ", itemID=" + itemID +
                 '}';

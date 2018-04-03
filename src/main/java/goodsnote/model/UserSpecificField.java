@@ -1,7 +1,10 @@
 package goodsnote.model;
 
 /**
- * Created by Milk on 25.02.2018.
+ *This is a bean class representing field.
+ *
+ * @author Eugene Prohorenko
+ * @version 1.0
  */
 
 import javax.persistence.*;

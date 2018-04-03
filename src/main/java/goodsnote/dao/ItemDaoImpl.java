@@ -40,7 +40,7 @@ public class ItemDaoImpl implements ItemDao {
     public void updateItem(Item item) {
         Session session = this.sessionFactory.getCurrentSession();
         session.update(item);
-        logger.info("item updated successfully. Manual details: "+item);
+        logger.info("item updated successfully. Item details: "+item);
     }
 
     @Override
@@ -69,7 +69,7 @@ public class ItemDaoImpl implements ItemDao {
     private UserSpecificEntry getEntry(UserSpecificField field, int itemID){
         UserSpecificEntry entry = new UserSpecificEntry();
         entry.setItemID(itemID);
-        entry.setFieldID(field.getId());
+        entry.setField(field);
 
         return entry;
     }

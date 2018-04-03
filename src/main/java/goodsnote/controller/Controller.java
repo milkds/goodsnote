@@ -57,8 +57,6 @@ public class Controller {
         item.setFields(fields);
         itemService.addItem(item);
 
-        System.out.println("item id is - " + item.getId());
-
         return "redirect:/showitem/"+item.getId();
     }
 

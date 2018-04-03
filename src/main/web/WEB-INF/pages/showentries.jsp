@@ -15,8 +15,8 @@
         <form:form action="${updateAction}" modelAttribute="modelEntry">
         <tr>
             <td>
-                <form:label path="fieldName">
-                    <spring:message text="${entry.fieldName}"/>
+                <form:label path="field.name">
+                    <spring:message text="${entry.field.name}"/>
                 </form:label>
             </td>
             <td>
@@ -25,21 +25,21 @@
             <td>
                 <form:input type="hidden" path="id" value="${entry.id}"/>
             </td>
-            <td>
+            <%--<td>
                 <form:input type="hidden" path="fieldOrder" value="${entry.fieldOrder}"/>
             </td>
             <td>
                 <form:input type="hidden" path="fieldType" value="${entry.fieldType}"/>
             </td>
             <td>
-                <form:input type="hidden" path="fieldID" value="${entry.fieldID}"/>
-            </td>
+                <form:input type="hidden" path="field" value="${entry.field}"/>
+            </td>--%>
             <td>
                 <form:input type="hidden" path="itemID" value="${entry.itemID}"/>
             </td>
-            <td>
+            <%--<td>
                 <form:input type="hidden" path="fieldName" value="${entry.fieldName}"/>
-            </td>
+            </td>--%>
         <tr>
         </form:form>
     </c:forEach>

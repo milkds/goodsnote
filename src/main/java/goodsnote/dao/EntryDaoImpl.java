@@ -55,15 +55,9 @@ public class EntryDaoImpl implements EntryDao{
         Session session = this.sessionFactory.getCurrentSession();
         Criteria criteria = session.createCriteria(UserSpecificEntry.class);
         criteria.add(Restrictions.like("itemID",itemID));
-        criteria.addOrder(Order.asc("fieldOrder"));
-        List<UserSpecificEntry> entries = criteria.list();
+        //criteria.addOrder(Order.asc("fieldOrder"));
 
-        for (UserSpecificEntry specificEntry: entries){
-            System.out.println("field id is "+specificEntry.getFieldID());
-            System.out.println("field name is "+specificEntry.getFieldName());
-        }
-
-        return entries;
+        return criteria.list();
     }
 
     public void setSessionFactory(SessionFactory sessionFactory) {
