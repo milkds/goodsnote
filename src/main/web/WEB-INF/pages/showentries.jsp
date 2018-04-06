@@ -30,10 +30,10 @@
             </td>
             <td>
                 <form:input type="hidden" path="fieldType" value="${entry.fieldType}"/>
-            </td>
-            <td>
-                <form:input type="hidden" path="field" value="${entry.field}"/>
             </td>--%>
+            <td>
+                <form:input type="hidden" path="field.id" value="${entry.field.id}"/>
+            </td>
             <td>
                 <form:input type="hidden" path="itemID" value="${entry.itemID}"/>
             </td>

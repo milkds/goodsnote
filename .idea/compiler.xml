@@ -9,8 +9,8 @@
         <module name="goodsnote" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.8">
-      <module name="goodsnote" target="1.8" />
+    <bytecodeTargetLevel>
+      <module name="goodsnote" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

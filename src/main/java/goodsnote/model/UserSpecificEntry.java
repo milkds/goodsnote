@@ -22,10 +22,8 @@ public class UserSpecificEntry {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    //TODO: make this field insertable and updatable only in table entries
-
     @ManyToOne
-    @JoinColumn(name="USER_FIELD_ID",referencedColumnName="FIELD_ID", updatable = false, insertable = false)
+    @JoinColumn(name="USER_FIELD_ID",referencedColumnName="FIELD_ID"/*, updatable = false, insertable = false*/)
     private UserSpecificField field;
 
    /* @Column(name = "USER_FIELD_TYPE", table = "user_fields", insertable = false, updatable = false)

@@ -46,6 +46,8 @@ INSERT INTO user_entries VALUES (8, 8, 3, 'russian' );
 INSERT INTO user_entries VALUES (9, 9, 3, 'definitely yes' );
 INSERT INTO user_entries VALUES (10, 1, 4, 'Nosov' );
 INSERT INTO user_entries VALUES (11, 2, 4, 'Fiction' );
+INSERT INTO user_entries VALUES (12, 4, 4, 'cool as fuck' );
+INSERT INTO user_entries VALUES (13, 3, 4, 'russian for babies' );
 
 
 

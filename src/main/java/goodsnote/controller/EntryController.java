@@ -40,7 +40,7 @@ public class EntryController {
     public String updateEntry (@ModelAttribute("entry") UserSpecificEntry entry){
         this.entryService.updateEntry(entry);
 
-        return "redirect:/showentries/"+entry.getItemID();
+        return "redirect:/showitem/"+entry.getItemID();
     }
 
     @RequestMapping(value = "showentries/{itemID}", method = RequestMethod.GET)

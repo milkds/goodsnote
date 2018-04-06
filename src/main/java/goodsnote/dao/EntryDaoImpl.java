@@ -53,9 +53,10 @@ public class EntryDaoImpl implements EntryDao{
     @Override
     public List<UserSpecificEntry> listEntries(int itemID) {
         Session session = this.sessionFactory.getCurrentSession();
-        Criteria criteria = session.createCriteria(UserSpecificEntry.class);
+        Criteria criteria = session.createCriteria(UserSpecificEntry.class, "entry");
         criteria.add(Restrictions.like("itemID",itemID));
-        //criteria.addOrder(Order.asc("fieldOrder"));
+        criteria.createAlias("entry.field", "field");
+        criteria.addOrder(Order.asc("field.fieldOrder"));
 
         return criteria.list();
     }
